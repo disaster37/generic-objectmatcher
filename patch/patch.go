@@ -134,6 +134,10 @@ type PatchResult struct {
 }
 
 func (p *PatchResult) IsEmpty() bool {
+	if len(p.Patch) == 0 {
+		return true
+	}
+
 	return string(p.Patch) == "{}"
 }
 
